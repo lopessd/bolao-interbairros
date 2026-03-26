@@ -594,7 +594,7 @@ const HomeScreen = ({ onSelectMatch, setScreen, onShowNotifications, unreadCount
     return true;
   });
 
-  const featuredMatch = MOCK_MATCHES.find(m => m.status === 'ongoing') || MOCK_MATCHES.find(m => m.status === 'open') || MOCK_MATCHES[0];
+  const featuredMatch = MOCK_MATCHES.find(m => m.status === 'open') || MOCK_MATCHES[0];
 
   return (
     <div className="pb-24 lg:pb-8">
@@ -602,10 +602,7 @@ const HomeScreen = ({ onSelectMatch, setScreen, onShowNotifications, unreadCount
         <div className="flex justify-between items-center">
           {!isSearching ? (
             <>
-              <div className="flex items-center gap-2">
-                <img src="/logo-reduzida.png" alt="Logo" className="w-8 h-8 rounded-lg object-cover" />
-                <h1 className="text-xl font-headline font-bold tracking-tight">Desafio Interbairros</h1>
-              </div>
+              <img src="/logo-menu.PNG" alt="Logo" className="h-10 object-contain" />
               <div className="flex items-center gap-3">
                 {isLoggedIn ? (
                   <div className="flex items-center gap-2 bg-surface px-3 py-1.5 rounded-full border border-white/5">
@@ -700,17 +697,16 @@ const HomeScreen = ({ onSelectMatch, setScreen, onShowNotifications, unreadCount
 
         {/* Featured Match */}
         <div className="relative rounded-3xl overflow-hidden aspect-[16/9] lg:aspect-[21/7] editorial-shadow mb-8 group cursor-pointer" onClick={() => onSelectMatch(featuredMatch)}>
-          <img 
-            src="https://picsum.photos/seed/stadium/800/450" 
-            alt="Destaque" 
+          <img
+            src="/estadio.jpg"
+            alt="Estádio"
             className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-            referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6">
             <div className="flex items-center gap-2 mb-2">
               <span className="px-2 py-0.5 bg-secondary text-black text-[10px] font-bold rounded uppercase tracking-widest">
-                {featuredMatch.status === 'ongoing' ? 'Ao Vivo' : 'Destaque'}
+                Próxima Partida
               </span>
               <span className="text-white/60 text-xs font-medium">{featuredMatch.time} • {featuredMatch.location}</span>
             </div>
@@ -2555,10 +2551,7 @@ const ProfileScreen = ({ setScreen, balance, onShowHelp, onShowNotifications }: 
 
   return (
     <div className="pb-24 lg:pb-8">
-      <Header 
-        title="Meu Perfil" 
-        rightElement={<button className="p-2 bg-surface rounded-full text-on-surface-variant"><Settings size={18} /></button>}
-      />
+      <Header title="Meu Perfil" />
       
       <div className="px-6 mt-6">
         {/* Profile Header */}
