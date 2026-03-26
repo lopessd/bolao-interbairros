@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #041209;
+  --color-surface: #0a2e1c;
+  --color-surface-low: #072012;
+  --color-surface-high: #114026;
+  --color-secondary: #a57d38;
+  --color-primary: #c99b24;
+  --color-tertiary: #fdfdfd;
+  --color-on-surface: #fdfdfd;
+  --color-on-surface-variant: #c2d1c7;
+  --color-outline-variant: #114026;
+  
+  --font-headline: "Manrope", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-body;
+  }
+}
+
+.glass-panel {
+  background: rgba(10, 46, 28, 0.7);
+  backdrop-filter: blur(16px);
+}
+
+.editorial-shadow {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
